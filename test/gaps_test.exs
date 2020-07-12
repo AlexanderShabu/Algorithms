@@ -20,4 +20,12 @@ defmodule GapsTest do
   test "72000000000000000033335" do
     assert Gaps.solution(72000000000000000033335) == 8
   end
+  test "array of numbers" do
+    Enum.each([
+      {22002200000000000000033335,5},
+      {2200220033335,10},
+      {32,0}, 
+      {2147483647,0},
+    ], fn {num,res} -> assert Gaps.solution(num) == res  end)
+  end
 end
